@@ -7,6 +7,10 @@ import Register from './pages/Auth/Register';
 import ForgotPassword from './pages/Auth/ForgotPassword';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './routes/ProtectedRoute';
+import AuthenticatedLayout from './components/layout/AuthenticatedLayout';
+import ProfileSetup from './pages/Profile/ProfileSetup';
+import UserProfile from './pages/Profile/UserProfile';
+import EditProfile from './pages/Profile/EditProfile';
 import './styles/global.css';
 
 function App() {
@@ -24,7 +28,9 @@ function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <ComingSoon pageName="Dashboard" />
+              <AuthenticatedLayout>
+                <ComingSoon pageName="Dashboard" />
+              </AuthenticatedLayout>
             </ProtectedRoute>
           }
         />
@@ -32,7 +38,9 @@ function App() {
           path="/feed"
           element={
             <ProtectedRoute>
-              <ComingSoon pageName="Feed" />
+              <AuthenticatedLayout>
+                <ComingSoon pageName="Feed" />
+              </AuthenticatedLayout>
             </ProtectedRoute>
           }
         />
@@ -40,7 +48,9 @@ function App() {
           path="/create-knock"
           element={
             <ProtectedRoute>
-              <ComingSoon pageName="Create Knock" />
+              <AuthenticatedLayout>
+                <ComingSoon pageName="Create Knock" />
+              </AuthenticatedLayout>
             </ProtectedRoute>
           }
         />
@@ -48,7 +58,9 @@ function App() {
           path="/marketplace"
           element={
             <ProtectedRoute>
-              <ComingSoon pageName="Marketplace" />
+              <AuthenticatedLayout>
+                <ComingSoon pageName="Marketplace" />
+              </AuthenticatedLayout>
             </ProtectedRoute>
           }
         />
@@ -56,7 +68,39 @@ function App() {
           path="/profile"
           element={
             <ProtectedRoute>
-              <ComingSoon pageName="Profile" />
+              <AuthenticatedLayout>
+                <UserProfile />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile/edit"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <EditProfile />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/edit-profile"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <EditProfile />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile-setup"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <ProfileSetup />
+              </AuthenticatedLayout>
             </ProtectedRoute>
           }
         />
@@ -64,7 +108,9 @@ function App() {
           path="/settings"
           element={
             <ProtectedRoute>
-              <ComingSoon pageName="Settings" />
+              <AuthenticatedLayout>
+                <ComingSoon pageName="Settings" />
+              </AuthenticatedLayout>
             </ProtectedRoute>
           }
         />

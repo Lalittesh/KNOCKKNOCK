@@ -46,7 +46,20 @@ export const registerUser = (userData) => {
     itemsLoaned: 0,
     helpRequests: 0,
     reliability: 100,
-    helpfulness: 100
+    helpfulness: 100,
+    bio: '',
+    location: '',
+    interests: [],
+    skills: [],
+    lendingItems: [],
+    contributionScore: 75,
+    badges: [],
+    helpedCount: 0,
+    bloodDonations: 0,
+    communityPoints: 0,
+    profileSetupCompleted: false,
+    age: '',
+    gender: ''
   };
 
   users.push(newUser);
