@@ -86,18 +86,10 @@ function GetHelp() {
 
   // Category quick-click scroll helper
   const handleCategoryRequest = (title, cat) => {
-    setItemName(title);
-    setCategory(cat);
-    
-    const formElement = document.getElementById('custom-form-section');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    const nameInput = document.getElementById('item-name-input');
-    if (nameInput) {
-      setTimeout(() => nameInput.focus(), 800);
-    }
+    setActiveRequest({
+      title: 'Request Sent',
+      message: `Your request for "${title}" has been sent to your nearby neighbors.`
+    });
   };
 
   // Drag & drop handlers
@@ -461,7 +453,7 @@ function GetHelp() {
               <div className={styles.modalSuccessIcon}>
                 <Check size={36} strokeWidth={3} />
               </div>
-              <h3 className={styles.modalTitle}>Request Posted!</h3>
+              <h3 className={styles.modalTitle}>{activeRequest.title || 'Request Posted!'}</h3>
               <p className={styles.modalDescription}>{activeRequest.message}</p>
               <button className={styles.modalCloseBtn} onClick={closeConfirm}>
                 Got it, thanks!
