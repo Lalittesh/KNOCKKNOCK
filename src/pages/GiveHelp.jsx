@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Check, Upload, Calendar, Heart, Award, MapPin } from 'lucide-react';
 import { logGoodDeed } from '../utils/api';
 import styles from './GiveHelp.module.css';
+import bloodDonationImg from '../assets/blood_donation.png';
 
 // Premium Unsplash images for category cards
 const CATEGORIES_DATA = [
@@ -12,7 +13,7 @@ const CATEGORIES_DATA = [
     title: 'Blood Donation',
     category: 'Medical',
     desc: 'Help save lives by donating blood to people in urgent need.',
-    img: 'https://images.unsplash.com/photo-1615461066841-6116ecdacd04?auto=format&fit=crop&w=600&q=80',
+    img: bloodDonationImg,
     btnText: 'Become a Donor'
   },
   {
@@ -123,7 +124,7 @@ function GiveHelp() {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
 
-  // Modal control state: null, 'confirm', 'form', 'success'
+  // Modal control state
   const [modalState, setModalState] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -151,7 +152,7 @@ function GiveHelp() {
   };
 
   const handleContinue = () => {
-    setModalState('form');
+    setModalState(null);
   };
 
   const handleCancel = () => {
@@ -260,13 +261,6 @@ function GiveHelp() {
       <div className={styles.heroSection}>
         <h1 className={styles.title}>Give Help</h1>
         <p className={styles.subtitle}>Share your time, skills, resources and kindness with your neighborhood.</p>
-        <div className={styles.heroIllustrationWrapper}>
-          <img 
-            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=80" 
-            alt="Neighbors volunteering together" 
-            className={styles.heroIllustration}
-          />
-        </div>
       </div>
 
       {/* Quick Help Categories Grid */}
@@ -359,21 +353,13 @@ function GiveHelp() {
                 exit={{ scale: 0.9, opacity: 0, y: 20 }}
                 transition={{ type: 'spring', duration: 0.5 }}
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1574607383476-f517f220d398?auto=format&fit=crop&w=600&q=80" 
-                  alt="Helping hands illustration" 
-                  className={styles.modalIllustration}
-                />
                 <h3 className={styles.modalTitle}>Thank you for helping your community ❤️</h3>
                 <p className={styles.modalDescription}>
-                  Your willingness to help can make someone's day better. Please provide a few details before publishing your offer.
+                  Your willingness to help can make someone's day better.
                 </p>
                 <div className={styles.modalBtnGroup}>
                   <button className={styles.continueBtn} onClick={handleContinue}>
                     Continue
-                  </button>
-                  <button className={styles.cancelBtn} onClick={handleCancel}>
-                    Cancel
                   </button>
                 </div>
               </motion.div>
