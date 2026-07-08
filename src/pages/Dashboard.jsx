@@ -5,12 +5,12 @@ import CommunityActionCard from '../components/CommunityActionCard';
 import styles from './Dashboard.module.css';
 
 // Import newly generated premium 3D assets
-import getHelpImg from '../assets/get_help.png';
-import giveHelpImg from '../assets/give_help.png';
+import getHelpImg from '../assets/get_help.jpg';
+import giveHelpImg from '../assets/give_help.jpg';
 import getServicesImg from '../assets/get_services.png';
 import getSkillsImg from '../assets/get_skills.png';
-import raiseComplaintImg from '../assets/raise_complaint.png';
-import communityEventsImg from '../assets/community_events.png';
+import raiseComplaintImg from '../assets/raise_complaint.jpg';
+import communityEventsImg from '../assets/community_events.jpg';
 
 function Dashboard() {
   const features = [
