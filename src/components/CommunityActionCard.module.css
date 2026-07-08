@@ -7,123 +7,212 @@
 
 .card {
   position: relative;
-  height: 280px;
-  border-radius: 24px;
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 12px 40px rgba(120, 113, 108, 0.05);
-  overflow: hidden;
+  height: 380px;
+  border-radius: 28px;
+  padding: 36px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  justify-content: flex-start;
+  z-index: 1;
+  overflow: visible; /* Allows the image to bleed and overlap boundaries */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 20px 48px rgba(120, 113, 108, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.03);
 }
 
-/* Background gradient spot light */
-.gradientGlow {
+/* Base glow and border layers */
+.glowOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+  inset: 0;
+  border-radius: 28px;
+  z-index: -2;
   pointer-events: none;
-  opacity: 0.65;
-  transition: opacity 0.3s ease;
+  opacity: 0.8;
+  transition: opacity 0.4s ease, filter 0.4s ease;
 }
 
-.card:hover .gradientGlow {
-  opacity: 0.95;
+.card:hover .glowOverlay {
+  opacity: 1;
+  filter: brightness(1.15);
 }
 
-/* Header Elements */
-.header {
+.borderOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 3;
+  transition: border-color 0.4s ease;
+}
+
+.card:hover .borderOverlay {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Card-specific luxury gradients and glows */
+
+/* Get Help: Deep Forest Green */
+.getHelpCard {
+  background: linear-gradient(145deg, #0b3d2e, #041712);
+}
+.getHelpCard .glowOverlay {
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.28), transparent 60%);
+}
+
+/* Give Help: Deep Blue Green */
+.giveHelpCard {
+  background: linear-gradient(145deg, #083344, #021218);
+}
+.giveHelpCard .glowOverlay {
+  background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.28), transparent 60%);
+}
+
+/* Get Services: Charcoal + Emerald */
+.getServicesCard {
+  background: linear-gradient(145deg, #111827, #06090e);
+}
+.getServicesCard .glowOverlay {
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.22), transparent 60%);
+}
+
+/* Get Skills: Deep Purple */
+.getSkillsCard {
+  background: linear-gradient(145deg, #312e81, #111030);
+}
+.getSkillsCard .glowOverlay {
+  background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.28), transparent 60%);
+}
+
+/* Raise Complaint: Dark Amber */
+.raiseComplaintCard {
+  background: linear-gradient(145deg, #78350f, #2f1405);
+}
+.raiseComplaintCard .glowOverlay {
+  background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.28), transparent 60%);
+}
+
+/* Community Events: Deep Rose */
+.communityEventsCard {
+  background: linear-gradient(145deg, #881337, #380413);
+}
+.communityEventsCard .glowOverlay {
+  background: radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.28), transparent 60%);
+}
+
+/* Card Content Styling */
+.content {
   position: relative;
-  z-index: 10;
+  z-index: 5;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
 }
 
-.iconContainer {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  background: white;
+.categoryBadge {
+  align-self: flex-start;
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.textGroup {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(120, 113, 108, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: var(--color-primary);
-}
-
-.arrowContainer {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-on-surface-variant);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, color 0.3s ease;
-}
-
-.card:hover .arrowContainer {
-  transform: translate(2px, -2px);
-  background-color: var(--color-primary);
-  color: white;
-}
-
-.arrow {
-  transition: stroke-width 0.2s ease;
-}
-
-/* Card Body */
-.body {
-  position: relative;
-  z-index: 10;
-  margin-top: auto;
-  margin-bottom: 12px;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 80%;
 }
 
 .title {
   font-family: var(--font-family-heading);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--color-primary);
-  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
   font-family: var(--font-family-sans);
   font-size: 14px;
-  line-height: 1.4;
-  color: var(--color-on-surface-variant);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Illustration Layer */
-.illustrationWrapper {
+/* Immersive Bleeding Visuals */
+.imageContainer {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 140px;
-  height: 140px;
+  bottom: -24px;
+  right: -24px;
+  width: 220px;
+  height: 220px;
   z-index: 2;
   pointer-events: none;
-  opacity: 0.9;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover .illustrationWrapper {
-  transform: scale(1.05) translateY(-4px);
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45));
+  will-change: transform;
+}
+
+.imageGradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, transparent 40%, rgba(0, 0, 0, 0.1) 85%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Premium Navigation Arrow Link */
+.arrowWrapper {
+  position: absolute;
+  bottom: 32px;
+  left: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.arrowText {
+  font-family: var(--font-family-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.arrowIcon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .arrowIcon {
+  transform: translateX(4px);
 }
