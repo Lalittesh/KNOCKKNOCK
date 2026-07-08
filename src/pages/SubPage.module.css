@@ -1,0 +1,181 @@
+.pageContainer {
+  max-width: var(--spacing-container-max);
+  margin: 0 auto;
+  padding: 40px var(--spacing-margin-desktop);
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 24px var(--spacing-margin-mobile);
+  }
+}
+
+/* Premium Back Button */
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 53, 39, 0.1);
+  color: var(--color-primary);
+  font-family: var(--font-family-sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(120, 113, 108, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 32px;
+}
+
+.backBtn:hover {
+  background: white;
+  border-color: var(--color-primary);
+  transform: translateX(-4px);
+  box-shadow: 0 6px 16px rgba(0, 53, 39, 0.08);
+}
+
+.backIcon {
+  transition: transform 0.3s ease;
+}
+
+/* Page Header */
+.headerSection {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+}
+
+.subtitle {
+  font-family: var(--font-family-sans);
+  font-size: 16px;
+  color: var(--color-on-surface-variant);
+}
+
+/* Card Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Premium Success Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 53, 39, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  width: 90%;
+  max-width: 460px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 53, 39, 0.12);
+  border-radius: 28px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.modalSuccessIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-primary-fixed);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(176, 240, 214, 0.4);
+}
+
+.modalTitle {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.modalDescription {
+  font-family: var(--font-family-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+}
+
+.modalPoints {
+  font-family: var(--font-family-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background-color: rgba(0, 102, 134, 0.08);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+
+.modalCloseBtn {
+  margin-top: 12px;
+  padding: 12px 32px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 53, 39, 0.15);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.modalCloseBtn:hover {
+  background-color: #0b513d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 53, 39, 0.25);
+}
+
+.modalCloseBtn:active {
+  transform: translateY(0);
+}

@@ -11,6 +11,13 @@ import AuthenticatedLayout from './components/layout/AuthenticatedLayout';
 import ProfileSetup from './pages/Profile/ProfileSetup';
 import UserProfile from './pages/Profile/UserProfile';
 import EditProfile from './pages/Profile/EditProfile';
+import Dashboard from './pages/Dashboard.jsx';
+import GetHelp from './pages/GetHelp.jsx';
+import GiveHelp from './pages/GiveHelp.jsx';
+import GetServices from './pages/GetServices.jsx';
+import GetSkills from './pages/GetSkills.jsx';
+import RaiseComplaint from './pages/RaiseComplaint.jsx';
+import CommunityEvents from './pages/CommunityEvents.jsx';
 import './styles/global.css';
 
 function App() {
@@ -29,7 +36,67 @@ function App() {
           element={
             <ProtectedRoute>
               <AuthenticatedLayout>
-                <ComingSoon pageName="Dashboard" />
+                <Dashboard />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/get-help"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <GetHelp />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/give-help"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <GiveHelp />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/get-services"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <GetServices />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/get-skills"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <GetSkills />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/raise-complaint"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <RaiseComplaint />
+              </AuthenticatedLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/community-events"
+          element={
+            <ProtectedRoute>
+              <AuthenticatedLayout>
+                <CommunityEvents />
               </AuthenticatedLayout>
             </ProtectedRoute>
           }
