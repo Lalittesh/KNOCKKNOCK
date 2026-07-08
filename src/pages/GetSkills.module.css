@@ -1,0 +1,433 @@
+.pageContainer {
+  max-width: var(--spacing-container-max);
+  margin: 0 auto;
+  padding: 40px var(--spacing-margin-desktop) 72px;
+  min-height: 100vh;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 53, 39, 0.1);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 53, 39, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 28px;
+}
+
+.backBtn:hover {
+  transform: translateX(-4px);
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(0, 53, 39, 0.12);
+}
+
+.backIcon {
+  transition: transform 0.3s ease;
+}
+
+.heroSection {
+  margin-bottom: 48px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-primary);
+}
+
+.subtitle {
+  margin-top: 12px;
+  max-width: 640px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.statCard {
+  padding: 22px 24px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(0, 53, 39, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 53, 39, 0.07);
+}
+
+.statCard strong {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-size: 30px;
+  color: var(--color-primary);
+}
+
+.statCard span {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-on-surface-variant);
+}
+
+.sectionHeader,
+.sectionHeaderCompact {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.sectionEyebrow,
+.skillBadge,
+.availabilityBadge,
+.sessionStatus {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(176, 240, 214, 0.3);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sectionTitle,
+.featuredTitle,
+.skillTitle,
+.sessionTitle,
+.modalTitle {
+  font-family: var(--font-family-heading);
+  color: var(--color-primary);
+}
+
+.sectionTitle {
+  margin-top: 12px;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.featuredCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(0, 53, 39, 0.08);
+  box-shadow: 0 18px 46px rgba(0, 53, 39, 0.08);
+  margin-bottom: 44px;
+}
+
+.featuredImageWrap {
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 32px;
+}
+
+.featuredTitle {
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.featuredMeta,
+.skillMeta,
+.modalMetaList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.featuredMeta span,
+.skillMeta span,
+.modalMetaList span {
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: rgba(0, 53, 39, 0.04);
+  color: var(--color-on-surface);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.skillCard {
+  height: 380px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(0, 53, 39, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 53, 39, 0.08);
+}
+
+.skillImageWrap {
+  height: 180px;
+  overflow: hidden;
+}
+
+.skillImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.skillBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: calc(100% - 180px);
+  padding: 18px 18px 20px;
+}
+
+.skillTitle {
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.skillDescription,
+.sessionDay,
+.sessionTime,
+.modalDescription {
+  color: var(--color-on-surface-variant);
+  line-height: 1.5;
+}
+
+.skillDescription {
+  font-size: 14px;
+  min-height: 42px;
+}
+
+.primaryButton,
+.secondaryButton {
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.primaryButton {
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(0, 53, 39, 0.18);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  background: #0b513d;
+}
+
+.secondaryButton {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 53, 39, 0.12);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.sessionsSection {
+  padding-top: 8px;
+}
+
+.sessionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.sessionCard {
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 251, 248, 0.98));
+  border: 1px solid rgba(0, 53, 39, 0.08);
+  box-shadow: 0 14px 34px rgba(0, 53, 39, 0.07);
+}
+
+.sessionTitle {
+  font-size: 24px;
+}
+
+.sessionDay {
+  margin: 10px 0 6px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 53, 39, 0.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 9999;
+}
+
+.modalCard {
+  width: min(620px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 24px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 34px 90px rgba(0, 53, 39, 0.18);
+}
+
+.modalImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin-bottom: 20px;
+}
+
+.modalTitle {
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.modalDescription {
+  margin-top: 12px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.modalMetaList {
+  margin-top: 18px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modalActions > * {
+  flex: 1;
+}
+
+.successIcon {
+  width: 78px;
+  height: 78px;
+  margin: 8px auto 0;
+  border-radius: 50%;
+  background: rgba(176, 240, 214, 0.45);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 36px rgba(176, 240, 214, 0.35);
+}
+
+@media (max-width: 1100px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .pageContainer {
+    padding: 24px var(--spacing-margin-mobile) 56px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .statsGrid,
+  .featuredCard,
+  .skillsGrid,
+  .sessionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeader,
+  .sectionHeaderCompact,
+  .modalActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .featuredContent,
+  .skillBody,
+  .sessionCard,
+  .modalCard {
+    padding: 20px;
+  }
+
+  .featuredTitle,
+  .skillTitle,
+  .sessionTitle,
+  .modalTitle {
+    font-size: 24px;
+  }
+
+  .skillCard {
+    height: auto;
+  }
+}
