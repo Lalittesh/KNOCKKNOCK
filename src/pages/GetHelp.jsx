@@ -5,7 +5,6 @@ import { ArrowLeft, Check, Upload, HelpCircle, User, Calendar, MapPin, Award } f
 import styles from './GetHelp.module.css';
 
 // Import visual assets
-import neighborsIllustration from '../assets/neighborhood_illustration.png';
 import catDrill from '../assets/cat_drill.png';
 import catLadder from '../assets/cat_ladder.png';
 import catScrewdriver from '../assets/cat_screwdriver.png';
@@ -189,13 +188,6 @@ function GetHelp() {
       <div className={styles.heroSection}>
         <h1 className={styles.title}>Get Help</h1>
         <p className={styles.subtitle}>Request anything from your trusted neighborhood.</p>
-        <div className={styles.heroIllustrationWrapper}>
-          <img 
-            src={neighborsIllustration} 
-            alt="Neighbors helping neighbors" 
-            className={styles.heroIllustration}
-          />
-        </div>
       </div>
 
       {/* Quick Help Categories Section */}
